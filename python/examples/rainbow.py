@@ -6,7 +6,7 @@ import time, colorsys
 print("Some LEDs wont light up in this example.")
 print("Don't panic!")
 
-unicorn.brightness(0.9)
+unicorn.brightness(0.5)
 
 while True:
 	for z in range(360):
