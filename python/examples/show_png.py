@@ -15,17 +15,16 @@ import unicornhat as unicorn
 from PIL import Image
 import signal, numpy, time
 
-unicorn.rotation(90)
 unicorn.brightness(0.4)
 
 img = Image.open('lofi.png')
 
-for o_x in range(img.size[0]/8):
-	for o_y in range(img.size[1]/8):
+for o_y in range(img.size[1]/8):
+	for o_x in range(img.size[0]/8):
 
-		for x in range(8):
-			for y in range(8):
-				pixel = img.getpixel(((o_x*8)+y,(o_y*8)+x))
+		for y in range(8):
+			for x in range(8):
+				pixel = img.getpixel(((o_x*8)+x,(o_y*8)+y))
 				print(pixel)
 				r, g, b = int(pixel[0]),int(pixel[1]),int(pixel[2])
 				unicorn.set_pixel(x, y, r, g, b)
